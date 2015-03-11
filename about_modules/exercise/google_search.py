@@ -5,11 +5,36 @@ Created on Wed Mar 11 12:08:51 2015
 @author: ryuhei
 """
 
+import os
+import natsort
 import google
 
-text = '本研究では、物理的に立体形状を表現し、動的な形状表現によって立体のアニメーションも表現可能なディスプレイについて研究を行います。 立体ディスプレイの実現には、動的に立体形状を表現する機構を持つハードウェアを作成し、表現された形状に対しプロジェクタを用いてテクスチャをマッピングする必要があります。さらに、操作時に影のできない立体ディスプレイを実現しました。 これまでの立体ディスプレイに関する研究では、ディスプレイ上方に設置されたプロジェクタからディスプレイ表面に投影を行っていました。 しかし、この方法で投影した場合、直接インタラクションを行う際に手などが遮蔽物となりディスプレイ表面に影ができてしまいます。 そこで、本研究ではディスプレイに対してリアプロジェクションを行い、影のできない立体ディスプレイを実現しました。 '
-sentence_end = text.find('。')
-sentence = text[:sentence_end]
-query = '"' + sentence + '"'
-results = google.search(query)
-print results.next()
+dir_name = 'data'
+
+# ここから...
+file_paths = []
+for file_name in os.listdir(dir_name):
+    file_path = os.path.join(dir_name, file_name)
+    file_paths.append(file_path)
+
+file_paths = natsort.natsorted(file_paths)
+
+text = ""
+for path in file_paths:
+    with open(path, 'r') as f:
+        char = f.read()
+        text += char
+# ここまではreconstruct_text.pyと同じ
+
+sentence_end = text.find('。')  # 最初の句点の位置
+sentence = text[:sentence_end] #　0文字目から最初の句点の一文字前までの文字列を切り出す
+query = '"' + sentence + '"'   # ダブルクオーテーションで囲む（Googleで完全一致検索するため）
+results = google.search(query) # 検索結果は一般には複数あることに注意
+
+urls = [] # resultsから結果を取り出し、urlsに入れる
+for result in results:
+    urls.append(result)
+
+print "検索結果:", len(urls), "件"
+url = urls[0]
+print url
