@@ -6,13 +6,13 @@ Created on Wed Mar 11 12:43:34 2015
 """
 
 import os
+import glob
 import natsort
 
 def reconstruct():
     dir_name = 'data'
 
-    # リスト内包記法を使う
-    file_paths = [os.path.join(dir_name, name) for name in os.listdir(dir_name)]
+    file_paths = glob.glob(os.path.join(dir_name, "*.txt")) # globを使う
     file_paths = natsort.natsorted(file_paths)
 
     text = ""
