@@ -8,13 +8,13 @@ Pythonの初歩2: モジュールの活用
 モジュールとは、`C++`でいうところのライブラリとだいたい同じ概念です。効率的な開発には、本体に標準で付属するモジュール群や、サードパーティー製のモジュールの活用が不可欠です。
 今回の勉強会ではPythonの環境構築にAnacondaを用いたので、Python本体（+標準モジュール群）だけでなく、よく使われるサードパーティー製モジュール群も一緒にインストールされており、すぐ使える状態が整っています。
 
-* 標準ライブラリ
-  * [標準ライブラリレファレンス](http://docs.python.jp/2.7/library/index.html)
-    * Pythonをインストールすると本体に標準で付属される、最初から利用可能なモジュール（`C++`でいうところの`<iostream>`など）の一覧です。
-  * [標準ライブラリミニツアー1](http://docs.python.jp/2/tutorial/stdlib.html), [ミニツアー2](http://docs.python.jp/2/tutorial/stdlib2.html)
-    * 膨大な標準モジュール群のうち、基本的なものが紹介されています。[公式チュートリアル](http://docs.python.jp/2/tutorial/index.html)の一項目です。
-* サードパーティー製とそのインストール方法
-  * （`C++`でいうところの`OpenCV`など）
+  * 標準ライブラリ
+    * [標準ライブラリレファレンス](http://docs.python.jp/2.7/library/index.html)
+      * Pythonをインストールすると本体に標準で付属される、最初から利用可能なモジュール（`C++`でいうところの`<iostream>`など）の一覧です。
+    * [標準ライブラリミニツアー1](http://docs.python.jp/2/tutorial/stdlib.html), [ミニツアー2](http://docs.python.jp/2/tutorial/stdlib2.html)
+      * 膨大な標準モジュール群のうち、基本的なものが紹介されています。[公式チュートリアル](http://docs.python.jp/2/tutorial/index.html)の一項目です。
+  * サードパーティー製とそのインストール方法
+    * （`C++`でいうところの`OpenCV`など）
 
 ## 標準モジュール
 
