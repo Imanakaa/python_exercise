@@ -42,7 +42,7 @@ import smtplib
 # 研究室のメールサーバに接続
 server = smtplib.SMTP('aissrv.ais.ics.ritsumei.ac.jp')
 # 送信者アドレス、宛先アドレス、本文を指定する
-server.sentmail('sakurai@ais.ics.ritsumei.ac.jp'
+server.sendmail('sakurai@ais.ics.ritsumei.ac.jp',
 				'rsakurai@fc.ritsumei.ac.jp',
 				'This is a test mail')
 ```
