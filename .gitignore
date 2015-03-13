@@ -1,5 +1,5 @@
 *.pyc
-about_modules/exercise/data
-about_modules/exercise/.google-cookie
-about_modules/exercise/answer/data
-about_modules/exercise/answer/.google-cookie
+exercise/data
+exercise/.google-cookie
+exercise/answer/data
+exercise/answer/.google-cookie
