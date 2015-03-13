@@ -8,11 +8,13 @@ Created on Wed Mar 11 12:08:51 2015
 import google
 import reconstruct_text_adv # モジュールとして読み込む
 
-text = reconstruct_text_adv.reconstruct() # さっき作った関数を再利用する
-sentence_end = text.find('。')
-sentence = text[:sentence_end]
-query = '"' + sentence + '"'
-results = google.search(query)
+def search():    
+    text = reconstruct_text_adv.reconstruct() # さっき作った関数を再利用する
+    sentence_end = text.find('。')
+    sentence = text[:sentence_end]
+    query = '"' + sentence + '"'
+    results = google.search(query)
+    return results.next() # イテレータから1個読み出す
 
-url = results.next() # イテレータから1個読み出す
-print url
+if __name__ == '__main__':
+    print search()
