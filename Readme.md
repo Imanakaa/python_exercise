@@ -21,8 +21,27 @@ Pythonの初歩2: モジュールの活用
 ## 標準モジュール
 
 * os, os.path
+ディレクトリやファイルなど、ファイルシステム上の操作を行うモジュールです。
+
+```python
+import os
+dir_name = "data"
+file_name = "0.jpg"
+# ファイルパスの安全な結合方法
+file_path = os.path.join(dir_name, file_name)
+print os.path.exists(file_path) # ファイルの存在チェック
+```
+
 * re
 正規表現のモジュールです。
+
+```python
+import re
+text = "あいうえおかきくけこさしすせそ"
+pattern = "お(.*)さ"
+match = re.search(pattern, text)
+print match.group(1) # かきくけこ
+```
 
 * urllib2
 インターネットからURLをもとにデータを取得するためのモジュールです。
