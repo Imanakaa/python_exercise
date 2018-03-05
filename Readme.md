@@ -11,10 +11,10 @@ Pythonの初歩2: モジュールの活用
 今回の勉強会ではPythonの環境構築にAnacondaを用いたので、Python本体（+標準モジュール群）だけでなく、よく使われるサードパーティー製モジュール群も一緒にインストールされており、すぐ使える状態が整っています。
 
 * 標準ライブラリ
-    * [標準ライブラリレファレンス](http://docs.python.jp/2.7/library/index.html)
+    * [標準ライブラリレファレンス](http://docs.python.jp/3.6/library/index.html)
         * Pythonをインストールすると本体に標準で付属される、最初から利用可能なモジュール（`C++`でいうところの`<iostream>`など）の一覧です。
-    * [標準ライブラリミニツアー1](http://docs.python.jp/2/tutorial/stdlib.html), [ミニツアー2](http://docs.python.jp/2/tutorial/stdlib2.html)
-        * 膨大な標準モジュール群のうち、基本的なものが紹介されています。[公式チュートリアル](http://docs.python.jp/2/tutorial/index.html)の一項目です。
+    * [標準ライブラリミニツアー1](http://docs.python.jp/3/tutorial/stdlib.html), [ミニツアー2](http://docs.python.jp/3/tutorial/stdlib2.html)
+        * 膨大な標準モジュール群のうち、基本的なものが紹介されています。[公式チュートリアル](http://docs.python.jp/3/tutorial/index.html)の一項目です。
 * サードパーティー製とそのインストール方法
     * （`C++`でいうところの`OpenCV`など）
 
@@ -29,7 +29,7 @@ dir_name = "data"
 file_name = "0.jpg"
 # ファイルパスの安全な結合方法
 file_path = os.path.join(dir_name, file_name)
-print os.path.exists(file_path) # ファイルの存在チェック
+print(os.path.exists(file_path)) # ファイルの存在チェック
 ```
 
 * re
@@ -40,23 +40,23 @@ import re
 text = "あいうえおかきくけこさしすせそ"
 pattern = "お(.*)さ"
 match = re.search(pattern, text)
-print match.group(1) # かきくけこ
+print(match.group(1)) # かきくけこ
 ```
 
-* urllib2
+* urllib
 インターネットからURLをもとにデータを取得するためのモジュールです。
 ファイルを読み書きするための`open関数`に似た作りになっていて、openした後にreadして読み込むところは同じです。下記の例では、yahoo.co.jpのトップページをダウンロードして表示しています。
 
 ```python
-import urllib2
-f = urllib2.urlopen('http://www.yahoo.co.jp')
+import urllib
+f = urllib.request.urlopen('http://www.yahoo.co.jp')
 html = f.read()
-print html
+print(html)
 ```
 
 * smtplib
 メールサーバを介してメールを送信するためのモジュールです。
-なお、これを実行するためには、McAfeeの **アクセス保護を無効にする** 必要があります。また、このサンプルは研究室LAN内からしか実行できません。しかし、SMTPサーバとしてgmailなどを使えば、どこからでも送信可能にできます（その場合、若干の拡張が必要になります）。
+【これは実行不要です】なお、これを実行するためには、McAfeeの **アクセス保護を無効にする** 必要があります。また、このサンプルは研究室LAN内からしか実行できません。しかし、SMTPサーバとしてgmailなどを使えば、どこからでも送信可能にできます（その場合、若干の拡張が必要になります）。
 
 ```python
 import smtplib
@@ -69,7 +69,7 @@ server.sendmail('sakurai@ais.ics.ritsumei.ac.jp',
 ```
 
 * SimpleHTTPServer
-カレントディレクトリを簡易HTTPサーバにしてしまうモジュールです。
+【Python3未対応につき動きません】カレントディレクトリを簡易HTTPサーバにしてしまうモジュールです。
 
 ```python
 import SimpleHTTPServer
