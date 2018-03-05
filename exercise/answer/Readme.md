@@ -13,7 +13,7 @@ conda install natsort
 ```python
 import natsort
 a = ['a2', 'a9', 'a1', 'a4', 'a10']
-print natsort.sorted(a)
+print(natsort.natsorted(a))
 # ['a1', 'a10', 'a2', 'a4', 'a9']
 ```
 
