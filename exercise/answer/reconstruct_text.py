@@ -20,7 +20,7 @@ for file_name in os.listdir(dir_name):
 
 #file_paths.sort() # この方法では思ったようにソートされない
 file_paths = natsort.natsorted(file_paths) # 自然順ソート
-print file_paths
+print(file_paths)
 
 # file_pathsのファイル達から順番に中身を読み出し、textに一文字ずつ追加する
 text = ""
@@ -30,4 +30,4 @@ for path in file_paths:
     text += char
     f.close()
 
-print text
+print(text)
