@@ -24,4 +24,4 @@ def reconstruct():
 
 if __name__ == '__main__':
     text = reconstruct()
-    print text
+    print(text)
