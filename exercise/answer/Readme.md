@@ -17,20 +17,16 @@ print(natsort.natsorted(a))
 # ['a1', 'a10', 'a2', 'a4', 'a9']
 ```
 
-## [google](https://pypi.python.org/pypi/google)
+## [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
-Google検索を行うためのモジュールです。
-これはcondaでは配布されていないため、pipでインストールします。
+Google検索を行うために使ったモジュールです。
+これ自体は汎用のウェブスクレイピング用のツールです．
+ウェブスクレイピングとは，ウェブ上のコンテンツ中の特定の箇所などをソフトウェアによって機械的に取得することをいいます．
+
+Anacondaではデフォルトで同梱されているため，改めてインストールする必要はありません。
 
 ```bash
-pip install google
+conda install beautifulsoup4
 ```
 
-とすればインストールできます。PyPiのdescriptionに[使用方法へのリンク](https://breakingcode.wordpress.com/2010/06/29/google-search-python/)があり、具体的には以下のように使います:
-
-```python
-# Get the first 20 hits for "Mariposa botnet" in Google Spain
-from google import search
-for url in search('Mariposa botnet', tld='es', lang='es', stop=20):
-    print(url)
-```
+とすればインストールできます。具体的な利用方法は[公式サイトのドキュメント](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)を見てください．
